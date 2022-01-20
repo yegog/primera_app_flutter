@@ -25,11 +25,28 @@ class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          // ignore: prefer_const_constructors
-          title: Text("mi App"),
-        ),
-        body: Column(
+      appBar: AppBar(
+        // ignore: prefer_const_constructors
+        title: Text("mi App"),
+      ),
+
+      body: Center(
+        child: ElevatedButton(
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: const <Widget>[Icon(Icons.access_time), Text("now")],
+            ),
+            onPressed: () {
+              var t = DateTime.now();
+              // ignore: avoid_print
+              print(t);
+            }),
+      ),
+
+      /**
+      ESTA PARTE PERMITE MOVER LOS COMPONENTES DE LOS WIDGETS DENTRO DE LA APLICACION 
+         TANTO PARA ROW COMO PARA COLUMN
+         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
@@ -44,10 +61,12 @@ class _InicioState extends State<Inicio> {
             // ignore: prefer_const_constructors
             Text(" hola 02"),
           ],
-        )
-        //
-        //body: ListView(children: <Widget>[
-        /**  Container(
+        )*/
+
+      // ESTA PARTE PERMITE INGRESAS IMAGENES A LA APLICACION
+      //body: ListView(children: <Widget>[
+      /** 
+      Container(
             padding: const EdgeInsets.all(20.0),
             child: Image.network(
                 "https://images-cdn.9gag.com/photo/aYK8R1m_460s.jpg"),
@@ -68,6 +87,6 @@ class _InicioState extends State<Inicio> {
                 "https://images-cdn.9gag.com/photo/aYK8R1m_460s.jpg"),
           )
         ]*/
-        );
+    );
   }
 }
